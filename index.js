@@ -22,110 +22,63 @@ app.get("/", (req, res) => {
   </head>
   
   <body>
-  <div class="form-row m-b-55">
-    <form method="POST" action="/evento">
-                <div class="name">Informações</div>
-                <div class="value">
-                  <div class="input-group-desc">
-                    <textarea
-                      class="input--style-5"
-                      rows="4"
-                      name="eventInfo"
-                      style="padding: 12px; line-height: 1.4"
-                    >
-                    </textarea>
-                    <label class="label--desc">informações do Evento</label>
-                  </div>
-                </div>
-              </div>
+  <div class="form-row mx-auto text-center m-5 container"> <form method="POST" action="/evento"> <h1>Informações</h1>
 
-              <div class="form-row">
-                <div class="name">Tipo</div>
-                <div class="value">
-                  <div class="input-group">
-                    <div class="rs-select2 js-select-simple select--no-search">
-                      <select name="opcoes">
-                        <option disabled="disabled" selected="selected">
-                          Escolha uma opção
-                        </option>
-                        <option>Social</option>
-                        <option>Corporativo</option>
-                        <option>Cultural</option>
-                        <option>Acadêmico</option>
-                        <option>Esportivo</option>
-                        <option>Diverso</option>
-                      </select>
-                      <div class="select-dropdown"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <label class="label--desc">Informações do Evento</label>
+        <div class="form-floating">
+            <div class="input-group-desc">
+                <textarea class="form-control" rows="4" name="eventInfo" style="padding: 12px; line-height: 1.4"></textarea>
+            </div>
+        </div>
 
-              <div class="form-row">
-                <div class="name">Orçamento</div>
-                <div class="value">
-                  <div class="input-group">
-                    <input
-                      class="input--style-5"
-                      type="text"
-                      name="orcamento"
-                      id="valor"
-                      step="100.00"
-                      placeholder="100.00"
-                    />
-                    <label class="label--desc"><R1></R1></label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="name">Participantes</div>
-                <div class="value">
-                  <div class="input-group">
-                    <input
-                      class="input--style-5"
-                      type="number"
-                      name="participantes"
-                    />
-                    <label class="label--desc"
-                      >Número estimado de participantes</label
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-row m-b-55">
-                <div class="name">Data do Evento</div>
-                <div class="value">
-                  <div class="row row-space">
+        <div class="form-row form-floating">
+            <div class="name">Tipo</div>
+            <select class="form-select" name="opcoes">
+                <option disabled="disabled" selected="selected">Escolha uma opção</option>
+                    <option value="1">Social</option>
+                    <option value="2">Corporativo</option>
+                    <option value="3">Cultural</option>
+                    <option value="4">Acadêmico</option>
+                    <option value="5">Esportivo</option>
+                    <option value="6">Diverso</option>
+                </select>
+            <div class="select-dropdown"></div>
+        </div> <div class="form-row">
+            <div class="name">Orçamento</div>
+            <div class="input-group mb-3">
+                <input class="form-control" type="text" name="orcamento" id="valor" step="100.00" placeholder="100.00" />
+                <label class="label--desc"></label>
+            </div>
+        </div> <div class="form-row">
+            <div class="name">Participantes</div>
+            <div class="input-group mb-3">
+                <input class="form-control" type="number" name="participantes" placeholder="Número estimado de participantes" />
+            </div>
+        </div> <div class="form-row m-b-55">
+            <div class="name">Data do Evento</div>
+            <div class="form-control">
+                <div class="row row-space mx-auto">
                     <div class="col-2">
-                      <div class="input-group-desc">
-                        <input
-                          class="input--style-5"
-                          type="date"
-                          name="dataI"
-                        />
-                        <label class="label--desc">Inicio</label>
-                      </div>
+                        <div class="input-group-desc">
+                            <input class="input--style-5" type="date" name="dataI" />
+                            <label class="label--desc">Inicio</label>
+                        </div>
                     </div>
                     <div class="col-2">
-                      <div class="input-group-desc">
-                        <input
-                          class="input--style-5"
-                          type="date"
-                          name="dataF"
-                        />
-                        <label class="label--desc">Fim</label>
-                      </div>
+                        <div class="input-group-desc">
+                            <input class="input--style-5" type="date" name="dataF" />
+                            <label class="label--desc">Fim</label>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div>
-                <button class="btn btn--radius-2 btn--red" type="submit">
-                  Registrar
-                </button>
-              </div>
-      </form>
+            </div>
+            <div>
+                <button class="btn btn-success" type="submit">Registrar</button>
+            </div>
+        </div>
+         </form>
+          </div>
+  
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
             `);
@@ -161,7 +114,7 @@ app.get("/listaEventos", (req, res) => {
             <body>
                 <div class="container mt-5">
                 
-                <table class="table table-striped table-hover">
+                <table class="table table-dark table-striped-columns">
                   <thead>
                     <tr>
                       <th scope= "col">Tipo de Evento</th>
@@ -188,7 +141,7 @@ app.get("/listaEventos", (req, res) => {
   res.write(`
     </tbody>
     </table>
-    <a href="/" class="btn btn-primary">Continuar cadastrando...</a>
+    <a href="/" class="btn btn-success">Continuar cadastrando...</a>
     </div>
     </body>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
